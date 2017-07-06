@@ -1,0 +1,10 @@
+resolve: {
+  root: path.resolve(__dirname),
+  alias: {
+    app: 'components/app',
+    home: 'components/home',
+    utility: 'components/common/utility',
+    textService: 'services/textService'
+  },
+  extensions: ['', '.js', '.jsx']
+},

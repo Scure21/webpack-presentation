@@ -1,0 +1,30 @@
+const path = require('path')
+
+module.exports = {
+  // Where to start bundling
+  entry: './app/main.jsx',
+  // Where to output
+  output: {
+    path: path.resolve('dist'),
+    filename: 'bundle.js'
+  },
+  // Resolve for specific extensions
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
+  // After initial build continue watching for changes
+  watch: true,
+  // How to resolve encountered imports
+  module: {
+    loaders: [{
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+    },{
+        test: /\.jsx$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      }
+    ],
+  }
+}
